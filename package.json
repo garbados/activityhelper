@@ -1,0 +1,19 @@
+{
+  "name": "activityhelper",
+  "version": "1.0.0",
+  "description": "An API for producing and validating ActivityPub objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && dependency-check --unused --no-dev . && mocha --recursive",
+    "cov": "nyc npm test",
+    "coveralls": "npm run cov && nyc report --reporter=text-lcov > lcov.info"
+  },
+  "author": "Diana Thayer <garbados@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "dependency-check": "^4.1.0",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "standard": "^17.0.0"
+  }
+}

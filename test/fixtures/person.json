@@ -1,0 +1,119 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://w3id.org/security/v1",
+    {
+      "manuallyApprovesFollowers": "as:manuallyApprovesFollowers",
+      "toot": "http://joinmastodon.org/ns#",
+      "featured": {
+        "@id": "toot:featured",
+        "@type": "@id"
+      },
+      "featuredTags": {
+        "@id": "toot:featuredTags",
+        "@type": "@id"
+      },
+      "alsoKnownAs": {
+        "@id": "as:alsoKnownAs",
+        "@type": "@id"
+      },
+      "movedTo": {
+        "@id": "as:movedTo",
+        "@type": "@id"
+      },
+      "schema": "http://schema.org#",
+      "PropertyValue": "schema:PropertyValue",
+      "value": "schema:value",
+      "IdentityProof": "toot:IdentityProof",
+      "discoverable": "toot:discoverable",
+      "Device": "toot:Device",
+      "Ed25519Signature": "toot:Ed25519Signature",
+      "Ed25519Key": "toot:Ed25519Key",
+      "Curve25519Key": "toot:Curve25519Key",
+      "EncryptedMessage": "toot:EncryptedMessage",
+      "publicKeyBase64": "toot:publicKeyBase64",
+      "deviceId": "toot:deviceId",
+      "claim": {
+        "@type": "@id",
+        "@id": "toot:claim"
+      },
+      "fingerprintKey": {
+        "@type": "@id",
+        "@id": "toot:fingerprintKey"
+      },
+      "identityKey": {
+        "@type": "@id",
+        "@id": "toot:identityKey"
+      },
+      "devices": {
+        "@type": "@id",
+        "@id": "toot:devices"
+      },
+      "messageFranking": "toot:messageFranking",
+      "messageType": "toot:messageType",
+      "cipherText": "toot:cipherText",
+      "suspended": "toot:suspended",
+      "focalPoint": {
+        "@container": "@list",
+        "@id": "toot:focalPoint"
+      }
+    }
+  ],
+  "id": "https://friend.camp/users/garbados",
+  "type": "Person",
+  "following": "https://friend.camp/users/garbados/following",
+  "followers": "https://friend.camp/users/garbados/followers",
+  "inbox": "https://friend.camp/users/garbados/inbox",
+  "outbox": "https://friend.camp/users/garbados/outbox",
+  "featured": "https://friend.camp/users/garbados/collections/featured",
+  "featuredTags": "https://friend.camp/users/garbados/collections/tags",
+  "preferredUsername": "garbados",
+  "name": "crows call me breadlady",
+  "summary": "<p>demoware given life and also anxiety [camp edition]</p><p>irrepressible trans enby, blessed by fleshless deities and possessing a great rack</p>",
+  "url": "https://friend.camp/@garbados",
+  "manuallyApprovesFollowers": true,
+  "discoverable": true,
+  "published": "2020-09-01T00:00:00Z",
+  "devices": "https://friend.camp/users/garbados/collections/devices",
+  "publicKey": {
+    "id": "https://friend.camp/users/garbados#main-key",
+    "owner": "https://friend.camp/users/garbados",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4hcyS4XL2hkdy19DBqOV\nSffukF511qKl50ATN1EHMcL0rO42AMMj4X842DpwIwifR3mgfX8ZvoGGCHfOENoN\n4vWQW2kBtgrc5VhAnMVwizHNnB9eHu7tX14NQmLipLGIFLPfmSK63G+fFy164GY3\nZ9IU8ctou8U/Zh5SLEz5xD54zrrk3DvO5VSfEwkSo7l1KBI71ltiZN1JVBNGoOs0\n6XyD770Hu5EmonsOvX2xUetLozNZx9NjK6zq9QpivEqunk+Erf0+hvix+MA+6gl9\n1dPjVcX20801hwBM6+yTCU7jFFd6f1yResKgNDUiE2480aGPJW6LdUU0dGhbCsAv\nGwIDAQAB\n-----END PUBLIC KEY-----\n"
+  },
+  "tag": [],
+  "attachment": [
+    {
+      "type": "PropertyValue",
+      "name": "pronouns",
+      "value": "she / her"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "capitalization",
+      "value": "sometimes"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "blog",
+      "value": "<a href=\"https://garbados.github.io/my-blog/\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"\">garbados.github.io/my-blog/</span><span class=\"invisible\"></span></a>"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "cows",
+      "value": "<a href=\"https://bovid.space\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"\">bovid.space</span><span class=\"invisible\"></span></a>"
+    }
+  ],
+  "endpoints": {
+    "sharedInbox": "https://friend.camp/inbox"
+  },
+  "icon": {
+    "type": "Image",
+    "mediaType": "image/jpeg",
+    "url": "https://friend.camp/system/accounts/avatars/000/098/501/original/2abaa5e9f18e32ac.jpg"
+  },
+  "image": {
+    "type": "Image",
+    "mediaType": "image/png",
+    "url": "https://friend.camp/system/accounts/headers/000/098/501/original/ef8e40a0bfd90ad4.png"
+  }
+}
