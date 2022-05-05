@@ -84,14 +84,30 @@ class BaseObject {
   }
 
   static fromObject (object) {
+    object = JSON.parse(JSON.stringify(object))
+
+    const recurse = (thing) => {
+      for (const [key, value] of Object.entries(thing)) {
+        if (value.type && value.type in MODELS) {
+          thing[key] = this.fromObject(value)
+        } else if (typeof value === 'object') {
+          recurse(value)
+        }
+      }
+    }
+
     if (object.type in MODELS) {
       let Model = MODELS[object.type]
       if (object['@context'] !== Model.context) {
         Model = class SubModel extends Model {
+          static name = Model.name
           static type = Model.type
           static context = object['@context']
         }
       }
+
+      recurse(object)
+
       const params = Model.required.map(prop => object[prop.propName])
       return new Model(...params, object)
     } else {
@@ -116,17 +132,19 @@ class BaseObject {
     return this.constructor.publish(this)
   }
 
-  get properties () {
-
-  }
-
   get json () {
     const json = { type: this.constructor.type }
 
     for (const prop of this.constructor.propNames) {
       const value = this[prop]
       if (value !== undefined) {
-        json[prop] = value
+        if (Array.isArray(value)) {
+          json[prop] = value.map((value) => {
+            return value.json || value
+          })
+        } else {
+          json[prop] = value.json || value
+        }
       }
     }
 
@@ -203,14 +221,20 @@ const API = {
     PROPERTIES[Property.propName] = Property
   },
   addContext (name, { models, properties }) {
-    CONTEXTS[name] = { models: {}, properties: {} }
-    for (const Model of models) {
-      API.addModel(Model)
-      CONTEXTS[name].models[Model.type] = Model
+    if (!(name in CONTEXTS)) {
+      CONTEXTS[name] = { models: {}, properties: {} }
     }
-    for (const Property of properties) {
-      API.addProperty(Property)
-      CONTEXTS[name].properties[Property.propName] = Property
+    if (models) {
+      for (const Model of models) {
+        API.addModel(Model)
+        CONTEXTS[name].models[Model.type] = Model
+      }
+    }
+    if (properties) {
+      for (const Property of properties) {
+        API.addProperty(Property)
+        CONTEXTS[name].properties[Property.propName] = Property
+      }
     }
   },
   plugin (plugin) {
